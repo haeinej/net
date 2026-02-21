@@ -301,6 +301,10 @@ section{position:relative;}
 .cta-inp{flex:1;height:50px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.22);border-right:none;font-family:var(--f);font-size:13px;color:white;padding:0 16px;outline:none;}
 .cta-inp::placeholder{color:rgba(255,255,255,0.28);}
 .cta-btn{height:50px;padding:0 24px;background:white;border:none;font-family:var(--f);font-size:9px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--B);cursor:pointer;flex-shrink:0;}
+.cta-btn:disabled{opacity:0.65;cursor:default;}
+.cta-msg{margin-top:12px;min-height:16px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.88);}
+.cta-msg.err{color:#151515;}
+.cta-msg.warn{color:rgba(255,255,255,0.66);}
 .cta-note{font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-top:16px;}
 
 /* ── FOOTER ── */
@@ -1035,10 +1039,11 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
 <section id="cta">
   <h2 class="cta-h">Your next<br>crossing<br>is nearby.</h2>
   <p class="cta-sub">Post one card. One thought. That's all it takes to exist on net.</p>
-  <div class="cta-form">
-    <input class="cta-inp" type="email" placeholder="your email">
-    <button class="cta-btn">get access →</button>
-  </div>
+  <form class="cta-form" id="waitlist-form">
+    <input class="cta-inp" id="waitlist-email" name="email" type="email" placeholder="your email" autocomplete="email" required>
+    <button class="cta-btn" type="submit">get access →</button>
+  </form>
+  <div class="cta-msg warn" id="waitlist-msg" aria-live="polite"></div>
   <div class="cta-note">SF first · no cold outreach · just when it's ready</div>
 </section>
 
@@ -1046,6 +1051,84 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   <div class="foot-logo">net<span>.</span></div>
   <div class="foot-r">who you are becoming · 2025</div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(() => {
+  const form = document.getElementById('waitlist-form');
+  const emailInput = document.getElementById('waitlist-email');
+  const message = document.getElementById('waitlist-msg');
+  const ctaSection = document.getElementById('cta');
+  const ctaButtons = document.querySelectorAll('.nav-cta,.hero-btn');
+  if (!form || !emailInput || !message) return;
+
+  const setMessage = (text, kind = '') => {
+    message.className = `cta-msg ${kind}`.trim();
+    message.textContent = text;
+  };
+
+  ctaButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!ctaSection) return;
+      ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => emailInput.focus(), 450);
+    });
+  });
+
+  // Replace these with your own values or set window.__SUPABASE_URL__/window.__SUPABASE_ANON_KEY before this script.
+  const SUPABASE_URL = window.__SUPABASE_URL__ || 'https://YOUR_PROJECT_ID.supabase.co';
+  const SUPABASE_ANON_KEY = window.__SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+  const WAITLIST_TABLE = 'waitlist_signups';
+
+  if (SUPABASE_URL.includes('YOUR_') || SUPABASE_ANON_KEY.includes('YOUR_')) {
+    setMessage('Waitlist setup pending: connect Supabase keys.', 'warn');
+    return;
+  }
+
+  const { createClient } = window.supabase;
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { persistSession: false, autoRefreshToken: false }
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+    if (!email) {
+      setMessage('Please enter a valid email.', 'err');
+      return;
+    }
+
+    const submitButton = form.querySelector('.cta-btn');
+    const originalLabel = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'saving…';
+
+    const params = new URLSearchParams(window.location.search);
+    const payload = {
+      email,
+      source: params.get('utm_source') || 'instagram',
+      campaign: params.get('utm_campaign'),
+      medium: params.get('utm_medium'),
+      referrer: document.referrer || null
+    };
+
+    const { error } = await supabase.from(WAITLIST_TABLE).insert([payload]);
+
+    if (!error) {
+      setMessage("You're in. I'll send updates as I build.", 'ok');
+      form.reset();
+    } else if (error.code === '23505') {
+      setMessage("You're already on the list. Thanks for the support.", 'ok');
+    } else {
+      console.error(error);
+      setMessage('Could not save right now. Try again soon.', 'err');
+    }
+
+    submitButton.disabled = false;
+    submitButton.textContent = originalLabel;
+  });
+})();
+</script>
 
 </body>
 </html>
