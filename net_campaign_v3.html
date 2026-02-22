@@ -271,98 +271,122 @@ section{position:relative;}
 
 /* ── DYNAMIC PROFILE ── */
 #dynamic-profile{background:var(--OFF);color:var(--K);padding:100px 48px;border-top:1px solid #E6DED6;}
-.dp-wrap{max-width:1180px;margin:0 auto;}
-.dp-header{max-width:760px;margin-bottom:30px;}
+.dp-wrap{max-width:1160px;margin:0 auto;}
+.dp-header{max-width:720px;margin-bottom:34px;}
 .dp-tag{
-  font-size:9px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;
+  font-size:8px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--B);display:flex;align-items:center;gap:10px;margin-bottom:14px;
 }
 .dp-tag::before{content:'';width:14px;height:1.5px;background:var(--B);}
-.dp-h{font-size:clamp(30px,4vw,52px);font-weight:900;letter-spacing:-0.04em;line-height:0.94;margin-bottom:14px;}
+.dp-h{font-size:clamp(30px,4vw,50px);font-weight:900;letter-spacing:-0.04em;line-height:0.94;margin-bottom:12px;}
 .dp-sub{font-size:15px;line-height:1.7;color:var(--DIM);}
 .dp-sub strong{color:var(--K);}
 
-.dp-phones{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+.dp-phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;}
+.dp-col{min-width:0;}
 .dp-col-head{
-  margin-bottom:8px;font-size:9px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--DIM);
+  margin-bottom:10px;font-size:8px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--DIM);
   display:flex;align-items:center;gap:8px;
 }
 .dp-col-head .n{color:var(--B);}
-.dp-phone{border:1.5px solid var(--K);background:#FDFBF9;overflow:hidden;}
-.dp-status{height:40px;padding:0 16px;border-bottom:1px solid #E6DED6;display:flex;align-items:center;justify-content:space-between;}
-.dp-time{font-size:30px;font-weight:900;letter-spacing:-0.03em;color:var(--K);}
+.dp-phone{
+  border:1px solid #DCD1C7;border-radius:22px;background:#FFF;overflow:hidden;
+  box-shadow:0 10px 24px rgba(21,21,21,0.06);
+}
+.dp-status{
+  height:34px;padding:0 13px;border-bottom:1px solid #EEE4DD;
+  display:flex;align-items:center;justify-content:space-between;background:#FFFDFB;
+}
+.dp-time{font-size:11px;font-weight:800;letter-spacing:0.02em;color:#2B2B2B;}
 .dp-dots{display:flex;gap:6px;}
-.dp-dot{width:7px;height:7px;border-radius:50%;background:#AAA;}
+.dp-dot{width:6px;height:6px;border-radius:50%;background:#C7BEB7;}
 .dp-dot.on{background:var(--B);}
 
 .dp-hero{
-  height:232px;position:relative;padding:18px;background:
-  linear-gradient(to top, rgba(0,0,0,0.5), transparent 45%),
-  linear-gradient(120deg, #DDD 10%, #F6F2EE 50%, #D4CCC4 100%);
+  height:172px;position:relative;padding:16px;background:
+  linear-gradient(to top, rgba(0,0,0,0.42), transparent 52%),
+  linear-gradient(120deg, #ECE5DD 10%, #FAF7F3 48%, #DBD1C8 100%);
 }
-.dp-name{position:absolute;left:16px;bottom:22px;color:white;}
-.dp-name h4{font-size:42px;font-weight:900;letter-spacing:-0.05em;line-height:0.9;}
-.dp-name p{font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;}
-.dp-ring{position:absolute;right:14px;top:14px;width:16px;height:16px;border-radius:50%;background:white;border:3px solid var(--B);}
+.dp-name{position:absolute;left:14px;bottom:14px;color:white;}
+.dp-name h4{font-size:28px;font-weight:900;letter-spacing:-0.04em;line-height:0.95;}
+.dp-name p{font-size:7px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;opacity:0.85;}
+.dp-ring{position:absolute;right:12px;top:12px;width:12px;height:12px;border-radius:50%;background:white;border:2px solid var(--B);}
 
-.dp-tabs{display:flex;border-top:1px solid #E6DED6;border-bottom:1px solid #E6DED6;}
+.dp-tabs{display:flex;border-top:1px solid #EEE4DD;border-bottom:1px solid #EEE4DD;background:#FFFCF8;}
 .dp-tab{
-  flex:1;height:40px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;
-  letter-spacing:0.16em;text-transform:uppercase;color:var(--DIM);border-right:1px solid #E6DED6;
+  flex:1;height:34px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--DIM);border-right:1px solid #EEE4DD;
 }
 .dp-tab:last-child{border-right:none;}
 .dp-tab.on{color:var(--K);position:relative;background:#FFF;}
-.dp-tab.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--B);}
+.dp-tab.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--B);}
 
-.dp-body{padding:14px 16px 16px;}
-.dp-sec{font-size:9px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--DIM);margin-bottom:8px;}
-.dp-title{font-size:34px;font-weight:900;line-height:0.96;letter-spacing:-0.03em;margin-bottom:8px;}
-.dp-copy{font-size:12px;line-height:1.6;color:var(--DIM);margin-bottom:10px;}
-.dp-list{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
-.dp-li{display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:700;line-height:1.45;}
-.dp-li::before{content:'';width:6px;height:6px;background:var(--B);margin-top:5px;flex-shrink:0;}
+.dp-body{padding:14px 14px 15px;}
+.dp-sec{font-size:8px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--DIM);margin-bottom:7px;}
+.dp-title{font-size:22px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:8px;}
+.dp-copy{font-size:12px;line-height:1.58;color:var(--DIM);margin-bottom:10px;}
+.dp-list{display:grid;gap:6px;margin-bottom:10px;}
+.dp-li{
+  padding-top:6px;border-top:1px solid #EEE4DD;
+  font-size:11px;font-weight:700;line-height:1.4;color:#333;
+}
+.dp-li::before{display:none;}
 .dp-pills{display:flex;gap:6px;flex-wrap:wrap;}
 .dp-pill{
-  height:24px;padding:0 10px;display:flex;align-items:center;border:1.5px solid var(--K);
-  font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:lowercase;background:#FFF;
+  height:22px;padding:0 9px;display:flex;align-items:center;border:1px solid #DCD1C7;border-radius:999px;
+  font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#FFFCF8;color:#4E4E4E;
 }
-.dp-card-row{margin-top:8px;border:1px solid #E6DED6;padding:8px;display:flex;align-items:center;gap:8px;}
-.dp-thumb{width:38px;height:28px;background:linear-gradient(120deg,#D9D0C6,#F5F2EE);border:1px solid #E6DED6;}
+.dp-card-row{
+  margin-top:8px;border:1px solid #E6DED6;background:#FFFCF8;
+  border-radius:10px;padding:8px;display:flex;align-items:center;gap:8px;
+}
+.dp-thumb{width:38px;height:28px;background:linear-gradient(120deg,#E3D9CE,#F7F2EC);border:1px solid #E6DED6;border-radius:6px;}
 .dp-card-row b{font-size:10px;line-height:1.35;}
 .dp-card-row span{font-size:8px;font-weight:700;color:var(--DIM);margin-left:auto;}
 
-.dp-link-list{display:flex;flex-direction:column;gap:0;border:1px solid #E6DED6;border-bottom:none;margin-bottom:12px;}
-.dp-link{display:flex;align-items:center;gap:10px;padding:10px 10px;border-bottom:1px solid #E6DED6;background:#FFF;}
-.dp-link-ico{width:16px;height:16px;border-radius:3px;background:var(--B);}
-.dp-link-name{font-size:12px;font-weight:700;}
-.dp-link-val{font-size:12px;font-weight:700;color:var(--B);margin-left:auto;}
+.dp-link-list{display:flex;flex-direction:column;gap:0;border:1px solid #EEE4DD;border-radius:12px;overflow:hidden;margin-bottom:10px;}
+.dp-link{display:flex;align-items:center;gap:10px;padding:9px 10px;border-bottom:1px solid #EEE4DD;background:#FFF;}
+.dp-link:last-child{border-bottom:none;}
+.dp-link-ico{width:14px;height:14px;border-radius:4px;background:var(--B);}
+.dp-link-name{font-size:11px;font-weight:700;color:#242424;}
+.dp-link-val{font-size:11px;font-weight:700;color:var(--DIM);margin-left:auto;}
 
-.dp-share-card{border:1px solid #E6DED6;background:#FFF;overflow:hidden;margin-bottom:12px;}
-.dp-share-top{display:flex;align-items:center;gap:8px;padding:8px 9px;background:#151515;color:white;}
+.dp-share-card{border:1px solid #EEE4DD;background:#FFF;border-radius:12px;overflow:hidden;margin-bottom:10px;}
+.dp-share-top{display:flex;align-items:center;gap:8px;padding:8px 9px;background:#1B1B1B;color:white;}
 .dp-share-av{width:26px;height:26px;background:linear-gradient(120deg,#D9D0C6,#F5F2EE);}
 .dp-share-top b{font-size:13px;}
 .dp-share-top span{font-size:8px;opacity:0.7;}
-.dp-share-t{padding:10px 9px;border-bottom:1px solid #E6DED6;color:var(--B);font-size:15px;font-weight:900;line-height:1;}
+.dp-share-t{padding:10px 9px;border-bottom:1px solid #EEE4DD;color:var(--B);font-size:13px;font-weight:900;line-height:1.25;}
 .dp-share-tags{display:flex;gap:6px;padding:0 9px 10px;}
-.dp-share-tags em{font-style:normal;font-size:8px;font-weight:700;border:1px solid var(--K);padding:3px 6px;background:#FBF7F3;}
-.dp-qr-row{display:flex;gap:10px;align-items:flex-start;background:#FBF7F3;border:1px solid #E6DED6;padding:8px;}
+.dp-share-tags em{
+  font-style:normal;font-size:7.5px;font-weight:700;border:1px solid #D7CCC2;
+  padding:2px 6px;border-radius:999px;background:#FFF;
+}
+.dp-qr-row{display:flex;gap:10px;align-items:flex-start;background:#FBF7F3;border:1px solid #E6DED6;border-radius:12px;padding:8px;}
 .dp-qr{
-  width:58px;height:58px;border:1px solid #E6DED6;background:
+  width:52px;height:52px;border:1px solid #D7CCC2;background:
   linear-gradient(90deg,#151515 20%,transparent 20%,transparent 40%,#151515 40%,#151515 60%,transparent 60%,transparent 80%,#151515 80%),
   linear-gradient(#151515 20%,transparent 20%,transparent 40%,#151515 40%,#151515 60%,transparent 60%,transparent 80%,#151515 80%);
-  background-size:16px 16px;
+  background-size:14px 14px;
 }
-.dp-qr-copy b{display:block;font-size:11px;margin-bottom:4px;}
-.dp-qr-copy p{font-size:10px;color:var(--DIM);line-height:1.5;}
+.dp-qr-copy b{display:block;font-size:10px;margin-bottom:3px;}
+.dp-qr-copy p{font-size:9px;color:var(--DIM);line-height:1.45;}
 .dp-share-btn{
-  margin-top:8px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--B);color:white;
-  font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;
+  margin-top:10px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--B);color:white;
+  border-radius:999px;font-size:9px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;
 }
 
-.dp-notes{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.dp-note{border-top:1px solid #E6DED6;padding-top:12px;font-size:13px;line-height:1.65;color:var(--DIM);}
-.dp-note b{color:var(--K);}
-.dp-note .n{color:var(--B);font-weight:900;margin-right:6px;}
+.dp-notes{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.dp-note{
+  border:1px solid #E6DED6;background:#FFF;border-radius:12px;padding:12px;
+  font-size:12px;line-height:1.55;color:var(--DIM);
+}
+.dp-note b{display:block;margin-bottom:4px;color:var(--K);}
+.dp-note .n{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:50%;background:#F2E9E1;color:var(--B);
+  font-size:8px;font-weight:900;margin-right:6px;
+}
 
 /* ── MISSION ── */
 #mission{
@@ -425,7 +449,7 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   .beats{grid-template-columns:repeat(2,1fr);}
   .card-grid,.profile-grid{grid-template-columns:1fr;gap:48px;}
   .dp-phones,.dp-notes{grid-template-columns:1fr;}
-  .dp-phone{max-width:520px;}
+  .dp-phone{max-width:430px;margin:0 auto;}
   .contrast-row{grid-template-columns:1fr;}
   .cr-col.mid{
     border-left:none;border-right:none;
@@ -458,16 +482,17 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   .beat:last-child{border-bottom:none;}
 
   .card-grid,.profile-grid{gap:30px;}
-  .dp-header{margin-bottom:22px;}
+  .dp-phones{gap:14px;}
+  .dp-header{margin-bottom:20px;}
   .dp-sub{font-size:14px;line-height:1.65;}
-  .dp-phone{max-width:none;}
-  .dp-hero{height:208px;}
-  .dp-name h4{font-size:36px;}
-  .dp-title{font-size:30px;}
+  .dp-phone{max-width:none;border-radius:18px;}
+  .dp-hero{height:158px;}
+  .dp-name h4{font-size:24px;}
+  .dp-title{font-size:19px;}
   .dp-copy{font-size:11px;}
-  .dp-status{height:36px;padding:0 12px;}
-  .dp-time{font-size:24px;}
-  .dp-tab{height:36px;font-size:10px;letter-spacing:0.14em;}
+  .dp-status{height:32px;padding:0 11px;}
+  .dp-time{font-size:10px;}
+  .dp-tab{height:32px;font-size:8px;letter-spacing:0.1em;}
   .two-cards{flex-direction:column;gap:16px;}
   .card-phone.dim{opacity:0.75;}
 
@@ -501,17 +526,18 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   .detail-item{gap:10px;padding:14px 0;}
   .detail-title{font-size:11px;}
   .detail-body{font-size:10px;}
-  .dp-hero{height:188px;padding:14px;}
-  .dp-name h4{font-size:30px;}
-  .dp-name p{font-size:8px;}
-  .dp-ring{width:14px;height:14px;border-width:2.5px;}
-  .dp-body{padding:12px;}
-  .dp-title{font-size:26px;}
-  .dp-pill{height:22px;padding:0 8px;font-size:9px;}
-  .dp-link{padding:9px 8px;}
-  .dp-link-name,.dp-link-val{font-size:11px;}
-  .dp-share-btn{height:40px;font-size:9px;}
-  .dp-note{font-size:12px;line-height:1.58;}
+  .dp-phone{border-radius:16px;}
+  .dp-hero{height:144px;padding:12px;}
+  .dp-name h4{font-size:22px;}
+  .dp-name p{font-size:7px;}
+  .dp-ring{width:10px;height:10px;border-width:2px;}
+  .dp-body{padding:11px;}
+  .dp-title{font-size:18px;}
+  .dp-pill{height:20px;padding:0 8px;font-size:8px;}
+  .dp-link{padding:8px;}
+  .dp-link-name,.dp-link-val{font-size:10px;}
+  .dp-share-btn{height:34px;font-size:8px;}
+  .dp-note{padding:10px;font-size:11px;line-height:1.5;}
   .cta-h{font-size:clamp(38px,14vw,56px);}
   .foot-r{font-size:8px;}
 }
@@ -1135,8 +1161,8 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   <div class="dp-wrap">
     <div class="dp-header">
       <div class="dp-tag">dynamic profile card</div>
-      <h2 class="dp-h">A new business card:<br>always in the present.</h2>
-      <p class="dp-sub">Most profiles are static summaries. net. works as a <strong>live profile card</strong> that updates with what you are exploring now, who you want to meet, and what you are open to next.</p>
+      <h2 class="dp-h">A business card<br>that never gets outdated.</h2>
+      <p class="dp-sub">Most profiles are static. net. is a <strong>live card</strong> that reflects what you are thinking now, who you want to meet, and where your direction is moving.</p>
     </div>
 
     <div class="dp-phones">
@@ -1160,30 +1186,18 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
             <div class="dp-tab">Share</div>
           </div>
           <div class="dp-body">
-            <div class="dp-sec">current card</div>
-            <div class="dp-title">What should a profile show: history, or present direction?</div>
-            <p class="dp-copy">Instead of a static self-summary, your top card reflects your current thought. The profile becomes a timeline of movement.</p>
+            <div class="dp-sec">live now</div>
+            <div class="dp-title">Your card should show who you are right now.</div>
+            <p class="dp-copy">The top card is always current. It updates as your thinking changes.</p>
             <div class="dp-list">
-              <div class="dp-li">Taste as identity formation</div>
-              <div class="dp-li">Curation vs recommendation systems</div>
-              <div class="dp-li">What platforms owe their users</div>
+              <div class="dp-li">Current thread: taste, AI, and identity</div>
+              <div class="dp-li">Open to people exploring adjacent questions</div>
             </div>
             <div class="dp-sec">open to</div>
             <div class="dp-pills">
               <span class="dp-pill">conversation</span>
-              <span class="dp-pill">co-research</span>
+              <span class="dp-pill">co-build</span>
               <span class="dp-pill">coffee</span>
-            </div>
-            <div class="dp-sec" style="margin-top:12px;">recent cards</div>
-            <div class="dp-card-row">
-              <div class="dp-thumb"></div>
-              <b>Will AI recommendation replace the need for taste?</b>
-              <span>now</span>
-            </div>
-            <div class="dp-card-row">
-              <div class="dp-thumb"></div>
-              <b>Amazing lunch with devs — what matters in AI era</b>
-              <span>3d</span>
             </div>
           </div>
         </div>
@@ -1209,16 +1223,14 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
             <div class="dp-tab">Share</div>
           </div>
           <div class="dp-body">
-            <div class="dp-sec">contact + presence</div>
+            <div class="dp-sec">core links</div>
             <div class="dp-link-list">
               <div class="dp-link"><span class="dp-link-ico"></span><span class="dp-link-name">Email</span><span class="dp-link-val">haein@minerva.edu</span></div>
-              <div class="dp-link"><span class="dp-link-ico" style="background:#A85A3F;"></span><span class="dp-link-name">LinkedIn</span><span class="dp-link-val">haein-jung</span></div>
               <div class="dp-link"><span class="dp-link-ico" style="background:#B96446;"></span><span class="dp-link-name">Instagram</span><span class="dp-link-val">@haein.j</span></div>
-              <div class="dp-link"><span class="dp-link-ico" style="background:#151515;"></span><span class="dp-link-name">Twitter / X</span><span class="dp-link-val">@haeinjung</span></div>
-              <div class="dp-link"><span class="dp-link-ico" style="background:#8F4D37;"></span><span class="dp-link-name">GitHub</span><span class="dp-link-val">haein-jung</span></div>
-              <div class="dp-link"><span class="dp-link-ico" style="background:#D37A58;"></span><span class="dp-link-name">Portfolio</span><span class="dp-link-val">haein.work</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#A85A3F;"></span><span class="dp-link-name">LinkedIn</span><span class="dp-link-val">haein-jung</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#151515;"></span><span class="dp-link-name">GitHub</span><span class="dp-link-val">haein-jung</span></div>
             </div>
-            <p class="dp-copy" style="margin:0;">Links stay attached to your current card, so people can move from context to contact without leaving your profile.</p>
+            <p class="dp-copy" style="margin:0;">Contact and context stay together, so people understand who you are before they reach out.</p>
           </div>
         </div>
       </div>
@@ -1243,32 +1255,32 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
             <div class="dp-tab on">Share</div>
           </div>
           <div class="dp-body">
-            <div class="dp-sec">your portable card</div>
+            <div class="dp-sec">share snapshot</div>
             <div class="dp-share-card">
               <div class="dp-share-top">
                 <div class="dp-share-av"></div>
                 <div><b>Haein Jung</b><br><span>CS · Minerva · SF</span></div>
               </div>
-              <div class="dp-share-t">Will AI recommendation replace the need for taste?</div>
-              <div class="dp-share-tags"><em>conversation</em><em>coffee</em></div>
+              <div class="dp-share-t">Current card. Always updated.</div>
+              <div class="dp-share-tags"><em>conversation</em><em>co-build</em></div>
             </div>
             <div class="dp-qr-row">
               <div class="dp-qr"></div>
               <div class="dp-qr-copy">
                 <b>net.app/haein</b>
-                <p>Scan to view the current card. It updates whenever your profile updates.</p>
+                <p>Scan once. Anyone always sees the newest version of your card.</p>
               </div>
             </div>
-            <div class="dp-share-btn">share card ↗</div>
+            <div class="dp-share-btn">share live card ↗</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="dp-notes">
-      <div class="dp-note"><span class="n">H</span><b>Now card:</b> Top card is your present status, not a frozen bio from years ago.</div>
-      <div class="dp-note"><span class="n">I</span><b>Recent stack:</b> Earlier cards remain visible so people can read your thinking over time.</div>
-      <div class="dp-note"><span class="n">J</span><b>Share card:</b> One QR/link acts like a modern business card, always current when opened.</div>
+      <div class="dp-note"><span class="n">H</span><b>Present-first</b> Not history first; the top layer reflects your current direction.</div>
+      <div class="dp-note"><span class="n">I</span><b>Context + contact</b> Links stay attached to your active card, not detached from meaning.</div>
+      <div class="dp-note"><span class="n">J</span><b>One share link</b> QR and URL work like a modern business card, always up to date.</div>
     </div>
   </div>
 </section>
