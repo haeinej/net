@@ -269,6 +269,101 @@ section{position:relative;}
 .tl-mini-thought{font-size:8.5px;font-weight:800;color:var(--K);line-height:1.3;letter-spacing:-0.01em;}
 .tl-mini-age{font-size:7px;font-weight:600;color:var(--DIM);margin-top:2px;}
 
+/* ── DYNAMIC PROFILE ── */
+#dynamic-profile{background:var(--OFF);color:var(--K);padding:100px 48px;border-top:1px solid #E6DED6;}
+.dp-wrap{max-width:1180px;margin:0 auto;}
+.dp-header{max-width:760px;margin-bottom:30px;}
+.dp-tag{
+  font-size:9px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--B);display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.dp-tag::before{content:'';width:14px;height:1.5px;background:var(--B);}
+.dp-h{font-size:clamp(30px,4vw,52px);font-weight:900;letter-spacing:-0.04em;line-height:0.94;margin-bottom:14px;}
+.dp-sub{font-size:15px;line-height:1.7;color:var(--DIM);}
+.dp-sub strong{color:var(--K);}
+
+.dp-phones{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+.dp-col-head{
+  margin-bottom:8px;font-size:9px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--DIM);
+  display:flex;align-items:center;gap:8px;
+}
+.dp-col-head .n{color:var(--B);}
+.dp-phone{border:1.5px solid var(--K);background:#FDFBF9;overflow:hidden;}
+.dp-status{height:40px;padding:0 16px;border-bottom:1px solid #E6DED6;display:flex;align-items:center;justify-content:space-between;}
+.dp-time{font-size:30px;font-weight:900;letter-spacing:-0.03em;color:var(--K);}
+.dp-dots{display:flex;gap:6px;}
+.dp-dot{width:7px;height:7px;border-radius:50%;background:#AAA;}
+.dp-dot.on{background:var(--B);}
+
+.dp-hero{
+  height:232px;position:relative;padding:18px;background:
+  linear-gradient(to top, rgba(0,0,0,0.5), transparent 45%),
+  linear-gradient(120deg, #DDD 10%, #F6F2EE 50%, #D4CCC4 100%);
+}
+.dp-name{position:absolute;left:16px;bottom:22px;color:white;}
+.dp-name h4{font-size:42px;font-weight:900;letter-spacing:-0.05em;line-height:0.9;}
+.dp-name p{font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;}
+.dp-ring{position:absolute;right:14px;top:14px;width:16px;height:16px;border-radius:50%;background:white;border:3px solid var(--B);}
+
+.dp-tabs{display:flex;border-top:1px solid #E6DED6;border-bottom:1px solid #E6DED6;}
+.dp-tab{
+  flex:1;height:40px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--DIM);border-right:1px solid #E6DED6;
+}
+.dp-tab:last-child{border-right:none;}
+.dp-tab.on{color:var(--K);position:relative;background:#FFF;}
+.dp-tab.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--B);}
+
+.dp-body{padding:14px 16px 16px;}
+.dp-sec{font-size:9px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--DIM);margin-bottom:8px;}
+.dp-title{font-size:34px;font-weight:900;line-height:0.96;letter-spacing:-0.03em;margin-bottom:8px;}
+.dp-copy{font-size:12px;line-height:1.6;color:var(--DIM);margin-bottom:10px;}
+.dp-list{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
+.dp-li{display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:700;line-height:1.45;}
+.dp-li::before{content:'';width:6px;height:6px;background:var(--B);margin-top:5px;flex-shrink:0;}
+.dp-pills{display:flex;gap:6px;flex-wrap:wrap;}
+.dp-pill{
+  height:24px;padding:0 10px;display:flex;align-items:center;border:1.5px solid var(--K);
+  font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:lowercase;background:#FFF;
+}
+.dp-card-row{margin-top:8px;border:1px solid #E6DED6;padding:8px;display:flex;align-items:center;gap:8px;}
+.dp-thumb{width:38px;height:28px;background:linear-gradient(120deg,#D9D0C6,#F5F2EE);border:1px solid #E6DED6;}
+.dp-card-row b{font-size:10px;line-height:1.35;}
+.dp-card-row span{font-size:8px;font-weight:700;color:var(--DIM);margin-left:auto;}
+
+.dp-link-list{display:flex;flex-direction:column;gap:0;border:1px solid #E6DED6;border-bottom:none;margin-bottom:12px;}
+.dp-link{display:flex;align-items:center;gap:10px;padding:10px 10px;border-bottom:1px solid #E6DED6;background:#FFF;}
+.dp-link-ico{width:16px;height:16px;border-radius:3px;background:var(--B);}
+.dp-link-name{font-size:12px;font-weight:700;}
+.dp-link-val{font-size:12px;font-weight:700;color:var(--B);margin-left:auto;}
+
+.dp-share-card{border:1px solid #E6DED6;background:#FFF;overflow:hidden;margin-bottom:12px;}
+.dp-share-top{display:flex;align-items:center;gap:8px;padding:8px 9px;background:#151515;color:white;}
+.dp-share-av{width:26px;height:26px;background:linear-gradient(120deg,#D9D0C6,#F5F2EE);}
+.dp-share-top b{font-size:13px;}
+.dp-share-top span{font-size:8px;opacity:0.7;}
+.dp-share-t{padding:10px 9px;border-bottom:1px solid #E6DED6;color:var(--B);font-size:15px;font-weight:900;line-height:1;}
+.dp-share-tags{display:flex;gap:6px;padding:0 9px 10px;}
+.dp-share-tags em{font-style:normal;font-size:8px;font-weight:700;border:1px solid var(--K);padding:3px 6px;background:#FBF7F3;}
+.dp-qr-row{display:flex;gap:10px;align-items:flex-start;background:#FBF7F3;border:1px solid #E6DED6;padding:8px;}
+.dp-qr{
+  width:58px;height:58px;border:1px solid #E6DED6;background:
+  linear-gradient(90deg,#151515 20%,transparent 20%,transparent 40%,#151515 40%,#151515 60%,transparent 60%,transparent 80%,#151515 80%),
+  linear-gradient(#151515 20%,transparent 20%,transparent 40%,#151515 40%,#151515 60%,transparent 60%,transparent 80%,#151515 80%);
+  background-size:16px 16px;
+}
+.dp-qr-copy b{display:block;font-size:11px;margin-bottom:4px;}
+.dp-qr-copy p{font-size:10px;color:var(--DIM);line-height:1.5;}
+.dp-share-btn{
+  margin-top:8px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--B);color:white;
+  font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;
+}
+
+.dp-notes{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.dp-note{border-top:1px solid #E6DED6;padding-top:12px;font-size:13px;line-height:1.65;color:var(--DIM);}
+.dp-note b{color:var(--K);}
+.dp-note .n{color:var(--B);font-weight:900;margin-right:6px;}
+
 /* ── MISSION ── */
 #mission{
   background:var(--K);
@@ -325,10 +420,12 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
 /* ── RESPONSIVE ── */
 @media (max-width:980px){
   nav{padding:0 28px;}
-  #hero,#insight,#card,#crossing,#profile,#mission,#cta{padding-left:28px;padding-right:28px;}
+  #hero,#insight,#card,#crossing,#profile,#dynamic-profile,#mission,#cta{padding-left:28px;padding-right:28px;}
   .story-intro{padding:0 28px 56px;}
   .beats{grid-template-columns:repeat(2,1fr);}
   .card-grid,.profile-grid{grid-template-columns:1fr;gap:48px;}
+  .dp-phones,.dp-notes{grid-template-columns:1fr;}
+  .dp-phone{max-width:520px;}
   .contrast-row{grid-template-columns:1fr;}
   .cr-col.mid{
     border-left:none;border-right:none;
@@ -352,7 +449,7 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   .hero-rope{margin:0 -16px 24px;overflow-x:auto;padding:0 16px 8px;}
   .hero-rope svg{min-width:760px;display:block;}
 
-  #insight,#card,#crossing,#profile,#mission,#cta{padding:72px 16px;}
+  #insight,#card,#crossing,#profile,#dynamic-profile,#mission,#cta{padding:72px 16px;}
   #story{padding:72px 0 0;}
   .story-intro{padding:0 16px 40px;}
 
@@ -361,6 +458,16 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   .beat:last-child{border-bottom:none;}
 
   .card-grid,.profile-grid{gap:30px;}
+  .dp-header{margin-bottom:22px;}
+  .dp-sub{font-size:14px;line-height:1.65;}
+  .dp-phone{max-width:none;}
+  .dp-hero{height:208px;}
+  .dp-name h4{font-size:36px;}
+  .dp-title{font-size:30px;}
+  .dp-copy{font-size:11px;}
+  .dp-status{height:36px;padding:0 12px;}
+  .dp-time{font-size:24px;}
+  .dp-tab{height:36px;font-size:10px;letter-spacing:0.14em;}
   .two-cards{flex-direction:column;gap:16px;}
   .card-phone.dim{opacity:0.75;}
 
@@ -394,6 +501,17 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
   .detail-item{gap:10px;padding:14px 0;}
   .detail-title{font-size:11px;}
   .detail-body{font-size:10px;}
+  .dp-hero{height:188px;padding:14px;}
+  .dp-name h4{font-size:30px;}
+  .dp-name p{font-size:8px;}
+  .dp-ring{width:14px;height:14px;border-width:2.5px;}
+  .dp-body{padding:12px;}
+  .dp-title{font-size:26px;}
+  .dp-pill{height:22px;padding:0 8px;font-size:9px;}
+  .dp-link{padding:9px 8px;}
+  .dp-link-name,.dp-link-val{font-size:11px;}
+  .dp-share-btn{height:40px;font-size:9px;}
+  .dp-note{font-size:12px;line-height:1.58;}
   .cta-h{font-size:clamp(38px,14vw,56px);}
   .foot-r{font-size:8px;}
 }
@@ -1008,6 +1126,149 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
         </div>
 
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DYNAMIC PROFILE ══ -->
+<section id="dynamic-profile">
+  <div class="dp-wrap">
+    <div class="dp-header">
+      <div class="dp-tag">dynamic profile card</div>
+      <h2 class="dp-h">A new business card:<br>always in the present.</h2>
+      <p class="dp-sub">Most profiles are static summaries. net. works as a <strong>live profile card</strong> that updates with what you are exploring now, who you want to meet, and what you are open to next.</p>
+    </div>
+
+    <div class="dp-phones">
+      <div class="dp-col">
+        <div class="dp-col-head"><span class="n">H</span> profile · now</div>
+        <div class="dp-phone">
+          <div class="dp-status">
+            <div class="dp-time">9:41</div>
+            <div class="dp-dots"><span class="dp-dot"></span><span class="dp-dot"></span><span class="dp-dot on"></span></div>
+          </div>
+          <div class="dp-hero">
+            <div class="dp-ring"></div>
+            <div class="dp-name">
+              <h4>Haein Jung</h4>
+              <p>CS · Minerva University · San Francisco</p>
+            </div>
+          </div>
+          <div class="dp-tabs">
+            <div class="dp-tab on">Now</div>
+            <div class="dp-tab">Links</div>
+            <div class="dp-tab">Share</div>
+          </div>
+          <div class="dp-body">
+            <div class="dp-sec">current card</div>
+            <div class="dp-title">What should a profile show: history, or present direction?</div>
+            <p class="dp-copy">Instead of a static self-summary, your top card reflects your current thought. The profile becomes a timeline of movement.</p>
+            <div class="dp-list">
+              <div class="dp-li">Taste as identity formation</div>
+              <div class="dp-li">Curation vs recommendation systems</div>
+              <div class="dp-li">What platforms owe their users</div>
+            </div>
+            <div class="dp-sec">open to</div>
+            <div class="dp-pills">
+              <span class="dp-pill">conversation</span>
+              <span class="dp-pill">co-research</span>
+              <span class="dp-pill">coffee</span>
+            </div>
+            <div class="dp-sec" style="margin-top:12px;">recent cards</div>
+            <div class="dp-card-row">
+              <div class="dp-thumb"></div>
+              <b>Will AI recommendation replace the need for taste?</b>
+              <span>now</span>
+            </div>
+            <div class="dp-card-row">
+              <div class="dp-thumb"></div>
+              <b>Amazing lunch with devs — what matters in AI era</b>
+              <span>3d</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dp-col">
+        <div class="dp-col-head"><span class="n">I</span> profile · links</div>
+        <div class="dp-phone">
+          <div class="dp-status">
+            <div class="dp-time">9:41</div>
+            <div class="dp-dots"><span class="dp-dot"></span><span class="dp-dot"></span><span class="dp-dot on"></span></div>
+          </div>
+          <div class="dp-hero">
+            <div class="dp-ring"></div>
+            <div class="dp-name">
+              <h4>Haein Jung</h4>
+              <p>CS · Minerva University · San Francisco</p>
+            </div>
+          </div>
+          <div class="dp-tabs">
+            <div class="dp-tab">Now</div>
+            <div class="dp-tab on">Links</div>
+            <div class="dp-tab">Share</div>
+          </div>
+          <div class="dp-body">
+            <div class="dp-sec">contact + presence</div>
+            <div class="dp-link-list">
+              <div class="dp-link"><span class="dp-link-ico"></span><span class="dp-link-name">Email</span><span class="dp-link-val">haein@minerva.edu</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#A85A3F;"></span><span class="dp-link-name">LinkedIn</span><span class="dp-link-val">haein-jung</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#B96446;"></span><span class="dp-link-name">Instagram</span><span class="dp-link-val">@haein.j</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#151515;"></span><span class="dp-link-name">Twitter / X</span><span class="dp-link-val">@haeinjung</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#8F4D37;"></span><span class="dp-link-name">GitHub</span><span class="dp-link-val">haein-jung</span></div>
+              <div class="dp-link"><span class="dp-link-ico" style="background:#D37A58;"></span><span class="dp-link-name">Portfolio</span><span class="dp-link-val">haein.work</span></div>
+            </div>
+            <p class="dp-copy" style="margin:0;">Links stay attached to your current card, so people can move from context to contact without leaving your profile.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dp-col">
+        <div class="dp-col-head"><span class="n">J</span> profile · share card</div>
+        <div class="dp-phone">
+          <div class="dp-status">
+            <div class="dp-time">9:41</div>
+            <div class="dp-dots"><span class="dp-dot"></span><span class="dp-dot"></span><span class="dp-dot on"></span></div>
+          </div>
+          <div class="dp-hero">
+            <div class="dp-ring"></div>
+            <div class="dp-name">
+              <h4>Haein Jung</h4>
+              <p>CS · Minerva University · San Francisco</p>
+            </div>
+          </div>
+          <div class="dp-tabs">
+            <div class="dp-tab">Now</div>
+            <div class="dp-tab">Links</div>
+            <div class="dp-tab on">Share</div>
+          </div>
+          <div class="dp-body">
+            <div class="dp-sec">your portable card</div>
+            <div class="dp-share-card">
+              <div class="dp-share-top">
+                <div class="dp-share-av"></div>
+                <div><b>Haein Jung</b><br><span>CS · Minerva · SF</span></div>
+              </div>
+              <div class="dp-share-t">Will AI recommendation replace the need for taste?</div>
+              <div class="dp-share-tags"><em>conversation</em><em>coffee</em></div>
+            </div>
+            <div class="dp-qr-row">
+              <div class="dp-qr"></div>
+              <div class="dp-qr-copy">
+                <b>net.app/haein</b>
+                <p>Scan to view the current card. It updates whenever your profile updates.</p>
+              </div>
+            </div>
+            <div class="dp-share-btn">share card ↗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dp-notes">
+      <div class="dp-note"><span class="n">H</span><b>Now card:</b> Top card is your present status, not a frozen bio from years ago.</div>
+      <div class="dp-note"><span class="n">I</span><b>Recent stack:</b> Earlier cards remain visible so people can read your thinking over time.</div>
+      <div class="dp-note"><span class="n">J</span><b>Share card:</b> One QR/link acts like a modern business card, always current when opened.</div>
     </div>
   </div>
 </section>
