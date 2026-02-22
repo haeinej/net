@@ -303,14 +303,20 @@ section{position:relative;}
 .dp-dot.on{background:var(--B);}
 
 .dp-hero{
-  height:172px;position:relative;padding:16px;background:
-  linear-gradient(to top, rgba(0,0,0,0.42), transparent 52%),
-  linear-gradient(120deg, #ECE5DD 10%, #FAF7F3 48%, #DBD1C8 100%);
+  height:172px;position:relative;padding:16px;background:#E8E1D9;
 }
-.dp-name{position:absolute;left:14px;bottom:14px;color:white;}
+.dp-hero-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center top;filter:grayscale(100%);
+}
+.dp-hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top, rgba(0,0,0,0.48), rgba(0,0,0,0.08) 56%, rgba(0,0,0,0));
+}
+.dp-name{position:absolute;left:14px;bottom:14px;color:white;z-index:2;}
 .dp-name h4{font-size:28px;font-weight:900;letter-spacing:-0.04em;line-height:0.95;}
 .dp-name p{font-size:7px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;opacity:0.85;}
-.dp-ring{position:absolute;right:12px;top:12px;width:12px;height:12px;border-radius:50%;background:white;border:2px solid var(--B);}
+.dp-ring{position:absolute;right:12px;top:12px;width:12px;height:12px;border-radius:50%;background:white;border:2px solid var(--B);z-index:2;}
 
 .dp-tabs{display:flex;border-top:1px solid #EEE4DD;border-bottom:1px solid #EEE4DD;background:#FFFCF8;}
 .dp-tab{
@@ -1174,6 +1180,7 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
             <div class="dp-dots"><span class="dp-dot"></span><span class="dp-dot"></span><span class="dp-dot on"></span></div>
           </div>
           <div class="dp-hero">
+            <img class="dp-hero-photo" src="net_dynamic_profile_photo.jpg" alt="Haein portrait">
             <div class="dp-ring"></div>
             <div class="dp-name">
               <h4>Haein Jung</h4>
@@ -1211,6 +1218,7 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
             <div class="dp-dots"><span class="dp-dot"></span><span class="dp-dot"></span><span class="dp-dot on"></span></div>
           </div>
           <div class="dp-hero">
+            <img class="dp-hero-photo" src="net_dynamic_profile_photo.jpg" alt="Haein portrait">
             <div class="dp-ring"></div>
             <div class="dp-name">
               <h4>Haein Jung</h4>
@@ -1243,6 +1251,7 @@ footer{background:var(--K);border-top:1px solid rgba(255,255,255,0.05);padding:2
             <div class="dp-dots"><span class="dp-dot"></span><span class="dp-dot"></span><span class="dp-dot on"></span></div>
           </div>
           <div class="dp-hero">
+            <img class="dp-hero-photo" src="net_dynamic_profile_photo.jpg" alt="Haein portrait">
             <div class="dp-ring"></div>
             <div class="dp-name">
               <h4>Haein Jung</h4>
